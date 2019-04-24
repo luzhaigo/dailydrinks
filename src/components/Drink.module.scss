@@ -1,0 +1,19 @@
+.drink {
+  margin: 0 5px;
+  .info {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    input {
+      width: 25px;
+      text-align: center;
+    }
+  }
+  .note {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #c3c3c3;
+    resize: none;
+    box-sizing: border-box;
+  }
+}
