@@ -3,6 +3,9 @@ import styles from './Drink.module.scss';
 
 const Drink = ({ setDrink, ...rest }) => {
   const inputChange = useCallback((e) => {
+    if (+e.target.value < 0) {
+      e.target.value = 0;
+    }
     setDrink({
       ...rest,
       count: +e.target.value,
@@ -18,9 +21,9 @@ const Drink = ({ setDrink, ...rest }) => {
   
   return (
     <li className={styles.drink}>
-      <div className={styles.name}>name: {rest.name}</div>
+      <div className={styles.name}>{rest.name}</div>
       <div className={styles.info}>
-        <div>price: {rest.price}</div>
+        <div>price: ${rest.price}</div>
         <input value={rest.count} type="number" onChange={inputChange}/>
       </div>
       <textarea className={styles.note} onChange={textAreaChange}/>

@@ -15,7 +15,7 @@ const App = () => {
     <div className={styles.App}>
       <h1 id={styles.web_name}>DailyDrinks</h1>
       <OrderList/>
-      <button className={styles.add_order} onClick={addNewOrder}>+</button>
+      <button className={styles.add_order} onClick={addNewOrder}></button>
       {showModal && <Modal closeModal={closeModal}><DrinksMenu closeModal={closeModal}/></Modal>}
     </div>
   );

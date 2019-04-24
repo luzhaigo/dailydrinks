@@ -1,12 +1,17 @@
 #order_list {
-  .title {
-    margin-left: 20px;
-  }
+  width: 700px;
+  margin: auto;
   .wrapper {
     list-style: none;
     padding: 0;
     display: flex;
     flex-flow: column;
     align-items: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #order_list {
+    width: 80vw;
   }
 }

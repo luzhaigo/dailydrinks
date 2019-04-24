@@ -1,10 +1,81 @@
 .item {
+  width: 100%;
+  border: 1px solid #c3c3c3;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px;
+  position: relative;
+  box-sizing: border-box;
   .name {
+    font-weight: bold;
+    font-size: 20px;
   }
-  .price {
-
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    input {
+      width: 50px;
+      text-align: center;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+  .note {
+    margin: 0;
+    padding: 5px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+    font-family: none;
+    font-size: 16px;
+    color: #c3c3c3;
   }
   .delete {
-    
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid #c3c3c3;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 1px;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform: rotate(45deg);
+      background-color: black;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 1px;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform: rotate(-45deg);
+      background-color: black;
+    }
   }
 }
