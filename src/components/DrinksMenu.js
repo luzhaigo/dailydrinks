@@ -20,9 +20,8 @@ const drinksMenu = [
 ];
 
 const renderDrinks = (drinks, setDrinks) => {
-  return drinks.map((drink, index) => <Drink key={drink.name} {...drink} setDrink={(_drink) => {
-    drinks[index] = _drink;
-    setDrinks(drinks);
+  return drinks.map((drink, index) => <Drink key={drink.name} {...drink} setDrink={(newDrink) => {
+    setDrinks(drinks.map((_drink, _idx) => index === _idx ? newDrink : _drink));
   }}/>);
 }
 
@@ -39,6 +38,7 @@ const DrinksMenu = ({ closeModal, addOrderItems }) => {
             <button className={styles.action} onClick={closeModal}>Cancel</button>
             <button className={styles.action} onClick={() => {
               addOrderItems(drinks.filter(drink => drink.count));
+              closeModal();
             }}>Add</button>
           </div>
       </div>

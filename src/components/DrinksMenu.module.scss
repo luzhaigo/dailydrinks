@@ -11,6 +11,7 @@
     margin: 0;
     overflow: scroll;
     flex: 1;
+    list-style: none;
   }
 
   .title {
@@ -30,6 +31,7 @@
       border: 1px solid #c3c3c3;
       margin-left: 10px; 
       background: white;
+      border-radius: 5px;
     }
   }
 

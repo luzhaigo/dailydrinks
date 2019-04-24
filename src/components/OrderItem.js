@@ -1,14 +1,20 @@
 import React from 'react';
 import styles from './OrderItem.module.scss';
 
-const OrderItem = (props) => {
+const OrderItem = ({ updateOrderItem, deleteOrderItem, ...rest }) => {
   return (
-    <div className={styles.item}>
-      <div className={styles.name}>{props.name}</div>
-      <div className={styles.price}>{props.price}</div>
-      <div className={styles.count}>{props.count}</div>
-      <button className={styles.delete}>X</button>
-    </div>
+    <li className={styles.item}>
+      <div className={styles.name}>name: {rest.name}</div>
+      <div className={styles.price}>price: {rest.price}</div>
+      <input type="number" className={styles.count} value={rest.count} onChange={(e) => {
+        updateOrderItem({
+          ...rest,
+          count: +e.target.value,
+        });
+      }}/>
+      <div>note:<pre>{rest.note}</pre></div>
+      <button className={styles.delete} onClick={deleteOrderItem}>X</button>
+    </li>
   );
 };
 
