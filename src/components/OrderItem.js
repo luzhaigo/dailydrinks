@@ -44,7 +44,7 @@ const OrderItem = ({ updateOrderItem, deleteOrderItem, ...rest }) => {
       <div className={styles.name}>{rest.name}</div>
       <div className={styles.info}>
         <div>price: $<span className={styles.price}>{rest.price}</span></div>
-        <input type="number" className={styles.count} value={rest.count} onChange={(e) => {
+        <input type="text" pattern="\d*" className={styles.count} value={rest.count} onChange={(e) => {
           if (+e.target.value < 1) {
             e.target.value = 1;
           }

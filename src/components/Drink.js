@@ -5,7 +5,7 @@ const Drink = ({ setDrink, ...rest }) => {
   const inputChange = useCallback((e) => {
     setDrink({
       ...rest,
-      count: +e.target.value,
+      count: Number.isNaN(+e.target.value) ? '' : +e.target.value,
     });
   }, [setDrink, rest]);
 
@@ -21,7 +21,7 @@ const Drink = ({ setDrink, ...rest }) => {
       <div className={styles.name}>{rest.name}</div>
       <div className={styles.info}>
         <div>price: ${rest.price}</div>
-        <input value={rest.count} type="number" onChange={inputChange}/>
+        <input value={rest.count} type="text" pattern="\d*" onChange={inputChange}/>
       </div>
       <textarea className={styles.note} onChange={textAreaChange}/>
     </li>
