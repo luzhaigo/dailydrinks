@@ -2,7 +2,6 @@
 
 - You can access the DailyDrinks by this url https://luzhaigo.github.io/dailydrinks/
 - RWD, you can access the web app by smartphone.
-- Unit tests included.
 
 ## Available Scripts
 
