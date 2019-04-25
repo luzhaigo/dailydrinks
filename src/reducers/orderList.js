@@ -4,7 +4,7 @@ import {
   DELETE_ORDER_ITEM,
 } from 'actions/types';
 
-export default (state = [{name: '#drink1', count: 1, price: 20, note: 'sdfdsf sdfsfs'}], action) => {
+export default (state = [], action) => {
   switch (action.type) {
     case ADD_ORDER_ITEMS: {
       return [...state, ...action.payload];

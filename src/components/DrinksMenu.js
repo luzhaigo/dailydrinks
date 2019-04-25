@@ -37,7 +37,7 @@ const DrinksMenu = ({ closeModal, addOrderItems }) => {
           <div className={styles.panel}>
             <button className={styles.action} onClick={closeModal}>Cancel</button>
             <button className={styles.action} onClick={() => {
-              addOrderItems(drinks.filter(drink => drink.count));
+              addOrderItems(drinks.filter(drink => drink.count > 0));
               closeModal();
             }}>Add</button>
           </div>

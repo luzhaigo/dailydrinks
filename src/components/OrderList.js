@@ -14,6 +14,7 @@ const OrderList = ({ list, updateOrderItemByIndex, deleteOrderItemByIndex }) => 
       <h2 className={styles.title}>Order List:</h2>
       <ul className={styles.wrapper}>
       {
+        list.length ?
         list.map((item, index) => (
           <OrderItem 
             key={index} 
@@ -26,7 +27,8 @@ const OrderList = ({ list, updateOrderItemByIndex, deleteOrderItemByIndex }) => 
             }}
             />
           )
-        )
+        ) :
+        <div className={styles.message}>Please click Add button to order drinks!</div>
       }
       </ul>
     </div>

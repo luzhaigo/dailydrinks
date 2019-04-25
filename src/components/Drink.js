@@ -3,9 +3,6 @@ import styles from './Drink.module.scss';
 
 const Drink = ({ setDrink, ...rest }) => {
   const inputChange = useCallback((e) => {
-    if (+e.target.value < 0) {
-      e.target.value = 0;
-    }
     setDrink({
       ...rest,
       count: +e.target.value,
